@@ -1,0 +1,6 @@
+fastapi
+langchain_core
+langchain_openai
+pgvector
+psycopg
+dotenv
