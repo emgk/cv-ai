@@ -1,6 +1,4 @@
-## AI Technical Stack
-
-For the AI part, I’m using Python and FastAPI for the backend, with LangChain to handle the RAG flow. OpenAI is used for generating embeddings and responses, while PostgreSQL with pgvector handles the vector search.
+used Python and FastAPI for the backend, with LangChain to handle the RAG flow. OpenAI is used for generating embeddings and responses, while PostgreSQL with pgvector handles the vector search.
 
 ### Flow
 
