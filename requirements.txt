@@ -1,6 +1,8 @@
 fastapi
-langchain_core
-langchain_openai
+uvicorn[standard]
+
+langchain-core
+langchain-openai
 pgvector
-psycopg
-dotenv
+psycopg[binary]
+python-dotenv
