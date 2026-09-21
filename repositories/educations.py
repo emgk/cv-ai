@@ -1,8 +1,9 @@
 from database import get_connection
 
+
 def get_educations():
     query = """
-        SELECT 
+        SELECT
             e.id AS id,
             e.title AS university_title,
             e.start AS start_date,

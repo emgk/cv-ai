@@ -1,11 +1,11 @@
 from langchain_core.documents import Document
+
 from repositories.contributions import get_contributions
+
 
 def get_contribution_documents():
     contributions = get_contributions()
     documents = []
-
-    print(len(contributions))
 
     for contribution in contributions:
         (
@@ -15,18 +15,16 @@ def get_contribution_documents():
             description,
             url,
             demo_url,
-            skills
+            skills,
         ) = contribution
 
         content = f"""
-Project: 
-{title}
+Project: {title}
 
 Description:
 {description}
 
-Period: 
-{date}
+Period: {date}
 """
 
         documents.append(
@@ -39,11 +37,8 @@ Period:
                     "repo_url": url,
                     "preview_url": demo_url,
                     "skills": skills,
-                }
+                },
             )
         )
 
     return documents
-
-    
-            

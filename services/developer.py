@@ -1,9 +1,11 @@
 from langchain_core.documents import Document
+
 from database import get_connection
+
 
 def get_developer_document():
     query = """
-    SELECT 
+    SELECT
         id,
         name,
         about,
@@ -18,7 +20,7 @@ def get_developer_document():
             row = cursor.fetchone()
 
     if not row:
-        return None
+        return []
 
     developer_id, name, about, skills = row
 
@@ -32,10 +34,12 @@ About:
 {about}
 """
 
-    return [Document(
-        page_content=content.strip(),
-        metadata={
-            "type":"developer",
-            "developer_id":developer_id,
-        }
-    )]
+    return [
+        Document(
+            page_content=content.strip(),
+            metadata={
+                "type": "developer",
+                "developer_id": developer_id,
+            },
+        )
+    ]

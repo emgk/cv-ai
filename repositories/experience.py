@@ -1,10 +1,11 @@
 from database import get_connection
 
+
 def get_experiences():
     query = """
         SELECT
             j.id AS job_id,
-            j.title as company,
+            j.company AS company,
             j.title AS job_title,
             j.start AS job_start,
             j.end AS job_end,

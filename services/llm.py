@@ -1,8 +1,9 @@
-from langchain_openai import ChatOpenAI
-
 import os
 
+from langchain_openai import ChatOpenAI
+
 llm = ChatOpenAI(
-    model=os.getenv('CHAT_MODAL_ID'),
-    temperature=0
+    model=os.getenv("CHAT_MODEL_ID"),
+    temperature=0,
 )
+ 

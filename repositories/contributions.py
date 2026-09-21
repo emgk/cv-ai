@@ -1,8 +1,9 @@
 from database import get_connection
 
+
 def get_contributions():
-    query = f"""
-        SELECT 
+    query = """
+        SELECT
             id,
             date,
             title,

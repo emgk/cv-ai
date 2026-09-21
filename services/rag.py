@@ -1,8 +1,9 @@
 import os
+
 from langchain_core.prompts import ChatPromptTemplate
 
-from services.retrieval import search_documents
 from services.llm import llm
+from services.retrieval import search_documents
 
 prompt = ChatPromptTemplate.from_template("""
 You are an AI assistant representing {person}.
@@ -62,21 +63,20 @@ Question:
 Answer:
 """)
 
-def ask( question: str ):
+
+def ask(question: str):
     results = search_documents(question, 5)
 
-    context = "\n\n".join(
-        row[0]
-        for row in results
-    )
+    context = "\n\n".join(row[0] for row in results)
 
-    message = prompt.invoke({
-        "context": context,
-        "question": question,
-        "person": os.getenv('PERSON')
-    })
+    message = prompt.invoke(
+        {
+            "context": context,
+            "question": question,
+            "person": os.getenv("PERSON"),
+        }
+    )
 
     response = llm.invoke(message)
 
     return response.content
-
