@@ -1,5 +1,9 @@
 used Python and FastAPI for the backend, with LangChain to handle the RAG flow. OpenAI is used for generating embeddings(len=1538) and responses, while PostgreSQL with pgvector handles the vector search.
 
+### Models
+for chat: gpt-4o-mini
+for embeddings: text-embedding-3-small(1538 dimensions)
+
 ### Flow
 
 ```text
